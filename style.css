@@ -1,51 +1,31 @@
-:root {
-  --dorado: #d4af37;
-  --dorado-oscuro: #b98c20;
-  --blanco: #fff;
-  --gris: #333;
-  --verde: #2e7d32;
-  --bg: #f9f9f9;
-}
-
+/* Estilos generales */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
-  background: var(--bg);
-  color: var(--gris);
+  background: #fdfcf5;
+  color: #333;
 }
 
+/* Encabezado */
 header {
-  background: var(--dorado);
+  background: #d4af37;
   padding: 2rem;
-  color: var(--blanco);
+  text-align: center;
+  color: #fff;
 }
 
-.header-content {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1.5rem;
-  flex-wrap: wrap;
-}
-
-.logo {
-  width: 100px;
-  height: auto;
-}
-
-.textos-header {
-  text-align: left;
-}
-
-.textos-header h1 {
-  margin: 0;
-  font-size: 2rem;
-}
-
-.textos-header span {
+header span {
   font-weight: bold;
+  font-size: 2.5rem;
 }
 
+header img {
+  height: 80px;
+  vertical-align: middle;
+  margin-right: 1rem;
+}
+
+/* Sección de paquetes */
 .paquetes {
   display: flex;
   flex-wrap: wrap;
@@ -61,20 +41,35 @@ header {
   padding: 1.5rem;
   width: 280px;
   text-align: center;
+  border: 2px solid #d4af37;
+  transition: transform 0.3s ease;
+}
+
+.paquete:hover {
+  transform: scale(1.03);
+}
+
+.paquete img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 1rem;
 }
 
 .paquete h2 {
   margin-bottom: 0.5rem;
+  color: #b8860b;
 }
 
 .precio {
   font-size: 1.2rem;
-  color: var(--verde);
+  color: #006400;
   margin: 0.5rem 0;
 }
 
 button {
-  background: var(--dorado);
+  background: #d4af37;
   color: white;
   border: none;
   padding: 0.6rem 1.2rem;
@@ -84,9 +79,10 @@ button {
 }
 
 button:hover {
-  background: var(--dorado-oscuro);
+  background: #bfa22c;
 }
 
+/* Página de reserva */
 .reserva {
   max-width: 600px;
   margin: 3rem auto;
@@ -94,11 +90,13 @@ button:hover {
   padding: 2rem;
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  border: 2px solid #d4af37;
 }
 
 .reserva h1 {
   text-align: center;
   margin-bottom: 1rem;
+  color: #b8860b;
 }
 
 .reserva label {
@@ -118,21 +116,78 @@ input[type="month"] {
   border-radius: 4px;
 }
 
+#pago {
+  margin-top: 2rem;
+}
+
 #pago h2 {
   margin-bottom: 1rem;
+  color: #b8860b;
 }
 
 #mensaje-final {
   text-align: center;
   font-size: 1.2rem;
-  color: var(--verde);
+  color: #228b22;
   font-weight: bold;
+  margin-top: 2rem;
 }
 
+/* Pie de página */
 footer {
-  background: var(--dorado);
+  background: #d4af37;
   color: white;
   text-align: center;
-  padding: 1.5rem 1rem;
-  margin-top: 3rem;
+  padding: 1rem;
+  font-size: 0.9rem;
+  margin-top: 2rem;
+}
+
+/* Contactos */
+.contactos {
+  background: #fff;
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.contactos h2 {
+  color: #b8860b;
+  margin-bottom: 1rem;
+}
+
+.botones-contacto {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.contact-button {
+  padding: 0.7rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.contact-button.instagram {
+  background: #e1306c;
+  color: white;
+}
+
+.contact-button.instagram:hover {
+  background: #c42c60;
+  transform: scale(1.05);
+}
+
+.contact-button.correo {
+  background: #0072c6;
+  color: white;
+}
+
+.contact-button.correo:hover {
+  background: #005ea6;
+  transform: scale(1.05);
 }
