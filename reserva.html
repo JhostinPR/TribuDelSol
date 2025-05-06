@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Reserva - Tribu del Sol</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="reserva">
+    <h1>Reserva tu Tour</h1>
+    <p id="info-paquete"></p>
+
+    <label for="personas">¿Cuántas personas reservarán?</label>
+    <input type="number" id="personas" min="1" value="1" />
+
+    <button onclick="calcular()">Calcular Total</button>
+
+    <div id="resultado"></div>
+
+    <div id="pago" style="display: none; margin-top: 2rem;">
+      <h2>Datos de Tarjeta</h2>
+      <label>Número de tarjeta:</label>
+      <input type="text" placeholder="**** **** **** 1234" />
+
+      <label>Nombre del titular:</label>
+      <input type="text" placeholder="Juan Pérez" />
+
+      <label>Fecha de expiración:</label>
+      <input type="month" />
+
+      <label>CVV:</label>
+      <input type="text" placeholder="123" />
+
+      <button onclick="pagar()">Pagar</button>
+    </div>
+
+    <div id="mensaje-final" style="display:none; margin-top: 2rem;"></div>
+  </main>
+
+  <footer>
+    <p>Dirección: Av. Bonampak 135, Cancún, Quintana Roo, México</p>
+    <p>&copy; 2025 Tribu del Sol. Todos los derechos reservados.</p>
+  </footer>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const nombre = params.get("paquete");
+    const precio = parseFloat(params.get("precio"));
+
+    document.getElementById("info-paquete").textContent = `Paquete: ${nombre} - Precio por persona: $${precio.toFixed(2)} MXN`;
+
+    function calcular() {
+      const personas = parseInt(document.getElementById("personas").value);
+      const total = personas * precio;
+      document.getElementById("resultado").innerHTML = `
+        <p>Total a pagar por ${personas} persona(s): <strong>$${total.toFixed(2)} MXN</strong></p>
+        <p>Completa los datos de tu tarjeta para finalizar la compra.</p>
+      `;
+      document.getElementById("pago").style.display = "block";
+    }
+
+    function pagar() {
+      const inputs = document.querySelectorAll('#pago input');
+      for (const input of inputs) {
+        if (input.value.trim() === "") {
+          alert("Por favor, completa todos los campos de la tarjeta.");
+          return;
+        }
+      }
+
+      document.getElementById("pago").style.display = "none";
+      document.getElementById("resultado").style.display = "none";
+      document.getElementById("mensaje-final").style.display = "block";
+      document.getElementById("mensaje-final").innerHTML = `
+        <p><strong>¡Gracias por tu compra!</strong></p>
+        <p>Tu reservación para el paquete <strong>${nombre}</strong> ha sido procesada con éxito.</p>
+      `;
+    }
+  </script>
+</body>
+</html>

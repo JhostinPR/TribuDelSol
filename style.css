@@ -1,0 +1,138 @@
+:root {
+  --dorado: #d4af37;
+  --dorado-oscuro: #b98c20;
+  --blanco: #fff;
+  --gris: #333;
+  --verde: #2e7d32;
+  --bg: #f9f9f9;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: var(--bg);
+  color: var(--gris);
+}
+
+header {
+  background: var(--dorado);
+  padding: 2rem;
+  color: var(--blanco);
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.logo {
+  width: 100px;
+  height: auto;
+}
+
+.textos-header {
+  text-align: left;
+}
+
+.textos-header h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.textos-header span {
+  font-weight: bold;
+}
+
+.paquetes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 2rem;
+  gap: 1.5rem;
+}
+
+.paquete {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  padding: 1.5rem;
+  width: 280px;
+  text-align: center;
+}
+
+.paquete h2 {
+  margin-bottom: 0.5rem;
+}
+
+.precio {
+  font-size: 1.2rem;
+  color: var(--verde);
+  margin: 0.5rem 0;
+}
+
+button {
+  background: var(--dorado);
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: var(--dorado-oscuro);
+}
+
+.reserva {
+  max-width: 600px;
+  margin: 3rem auto;
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.reserva h1 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.reserva label {
+  display: block;
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+input[type="number"],
+input[type="text"],
+input[type="month"] {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+#pago h2 {
+  margin-bottom: 1rem;
+}
+
+#mensaje-final {
+  text-align: center;
+  font-size: 1.2rem;
+  color: var(--verde);
+  font-weight: bold;
+}
+
+footer {
+  background: var(--dorado);
+  color: white;
+  text-align: center;
+  padding: 1.5rem 1rem;
+  margin-top: 3rem;
+}
